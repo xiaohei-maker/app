@@ -132,8 +132,7 @@ public class QuestionService {
                 .andCreatorEqualTo(userId);
         List<Question> questions = questionMapper.selectByExampleWithRowbounds(example, new RowBounds(offset, size));
         List<QuestionDTO> questionDTOList = new ArrayList<>();
-//        System.out.println(page);
-//        System.out.println(totalPage);
+
 
         for (Question question : questions) {
             User user = userMapper.selectByPrimaryKey(question.getCreator());
@@ -144,8 +143,6 @@ public class QuestionService {
         }
 
         paginationDTO.setData(questionDTOList);
-//                System.out.println(page);
-//        System.out.println(totalPage);
         return paginationDTO;
     }
 

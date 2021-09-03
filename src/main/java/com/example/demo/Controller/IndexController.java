@@ -5,7 +5,6 @@ import com.example.demo.Service.QuestionService;
 import com.example.demo.Service.UserService;
 import com.example.demo.cache.HotTagCache;
 import com.example.demo.dto.PaginationDTO;
-import com.mysql.cj.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

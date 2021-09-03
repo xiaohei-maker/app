@@ -84,12 +84,14 @@ public class IndexController {
         user.setPassword(password);
         user.setEmail(email);
         user.setSex(sex);
+        user.setAccountId(username+password);
         user.setToken(token);
-        userService.createUser(user);
-        HttpSession session=request.getSession();
-
-        response.addCookie(new Cookie("token",token));
-      //  session.setAttribute("user",user);
-        return "redirect:/";
+        String a=userService.createUser(user);
+        if(a==null){
+            return "error";
+        }else {
+            response.addCookie(new Cookie("token",token));
+            return "redirect:/";
+        }
     }
 }
